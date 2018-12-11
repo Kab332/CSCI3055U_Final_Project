@@ -21,10 +21,10 @@
 ```scala
 var x:String = "Variable"	// Declaring variable, data type will be String
 x = "Another Variable"		// Changing value to another String
-x = 5			// Will not work, 5 is not a string
+x = 5				// Will not work, 5 is not a string
 
-var y = 5		// Data type will be detected automatically, here it is Int
-y = 5.5			// Will not work since 5.5 is not an Int
+var y = 5			// Data type will be detected automatically, here it is Int
+y = 5.5				// Will not work since 5.5 is not an Int
 ```
 
 #### 
