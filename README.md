@@ -4,14 +4,14 @@
 - _kabilan.manogaran@uoit.net_
 
 ## About the language
-
+----
 > _Describe the language_
 >
 > - History
 > - Some interesting features
 
 ## About the syntax
-
+----
 #### Data Types 
 ----
 Data Type | Description | Default Value
@@ -203,13 +203,12 @@ object Object_Name {
 }
 ```
 
-
 ## About the tools
-
+----
 > _Describe the compiler or interpreter needed_.
 
 ## About the standard library
-
+----
 #### Writing to file
 > Scala doesn't have file writing methods, but it can use any Java objects including java.io
 ```scala
@@ -263,6 +262,41 @@ println(x)
 import scala.collection._
 
 var numbers = Map("One" -> 1, "Two" -> 2, "Three" -> 3)
+```
+
+## About the specialized libraries 
+----
+#### Swing
+> An application that has a button 
+```scala
+import scala.swing._
+
+object ExampleApp extends SimpleSwingApplication {
+  def top= new MainFrame {
+    title = "An App"
+    contents = new Button {
+      text = "Click this"
+    }
+  }
+}
+```
+
+#### XML
+> Creating a XML element and then accessing its attributes
+```scala
+import scala.xml._
+
+val person: Elem = <person id ="1">Bob</person>
+
+val id = person \@ "id"
+val name = person.text
+
+println(id)
+println(name)
+
+// Output
+// 1
+// Bob
 ```
 
 ## About open source library
