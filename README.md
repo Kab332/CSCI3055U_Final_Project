@@ -209,6 +209,9 @@ var step1 = add(5)_
 var step2 = step1(5)
 
 println(step2)
+
+// Output
+// 10
 ```
 
 #### Classes
@@ -394,7 +397,7 @@ for (x <- 0 until values.value.size) {
 > 	* It is both object oriented and functional 
 > * That being said, it is possible to do procedural programming using Scala, it is just not its focus
 
-##### Procedural Programming Example
+##### Procedural Programming Example (for comparison)
 ```scala
 def greet (name:String, age:String, birth_date:String) {
   println("My name is " + name + ", my birthday is "
@@ -410,7 +413,7 @@ greet("Bob", "25", "January 1st, 2000")
 >		* Classes describe object's attributes using variables
 >		* Classes describe object's functionality using methods
 >
-##### Object Oriented Programming Example
+##### Object Oriented Programming Example (for comparison)
 > - The greet method has the same functionality as the one above, but here it has no arguments
 ```scala
 class Person (arg1:String, arg2:String, arg3:String) {
@@ -431,4 +434,21 @@ bob.greet()
 > * Functional programming features:
 > 	* Every function is a value
 > 	* Supports higher order functions 
->	*  
+>	* Supports function currying 
+
+#### 2) Meta-programming macro
+> * Scala has the ability to perform meta-programming
+> * Assists in various activities, such as code generation and refactoring
+> * Meta-programming is possible in Scala through the Scala.reflect library 
+> 	* Provided in the standard distribution
+> 	* Uses macros to generate structured code
+>	* Complicated, not optimized for library users
+>	* Brittle, a lot of unspecified information
+> * Macros are compile-time meta-programming
+> 	* They are byte code after being compiled
+> * Scala meta can be used instead
+>	* An open source library 
+>	* Everything represented by Trees
+> 	* Keeps all information about the program
+
+#### 3) Symbol resolution
