@@ -81,7 +81,7 @@ var (x, y:Int, z:String) = (10, 15, "Assignment")
 > 	* `else { // more code }`
 
 ```scala
-var x:Int = 2
+var x:Int = 2		// x is 2
 
 if (x == 3) {
 	println ("x is 3")		// If x equals 3, this println happens
@@ -89,6 +89,62 @@ if (x == 3) {
 	println ("x is greater than 3")	// If x > 3, this println happens
 } else {
 	println ("x is less than 3")	// If neither of the above conditions are true, then this println happens
+}
+```
+
+### Loop Statements
+----
+#### while
+> * A block of code is iterated over and over again while a `condition` remains true
+> 	* `while (condition) { // code in here }` 
+> * The condition is checked before the code block is executed
+> * This is a useful loop for when you do not know how many iterations are needed
+
+```scala
+var a:Int = 0
+
+/* This will print a until a's value is 5
+ * The output will be 0 1 2 3 4, each on its own line	*/
+while (a < 5) {
+	println(a)
+	a = a + 1
+}
+```
+
+#### do-while
+> * Similar to the `while` loop, but condition is checked at the end of the loop
+> * This means that the code block will be executed at least once
+
+```scala
+var a:Int = 5
+
+/* This will print a once even though its value is 5, since the condition is being checked at the end
+ * The output will be 5. */
+do {
+	println(a)
+} while (a < 5)
+```
+
+#### for 
+> * A loop that iterates a specific amount of times
+> * If a range of integers is given, the loop will iterate through that range
+> * It while keeping track of its current position using a variable
+> 	* `for (currentPosition <- start to end) { // code that will be iterated  }`
+> 	* Values of currentPosition: start, start + 1, start + 2, ... , end - 1, end
+> * `to` is inclusive, it will include the end value 
+> * `to` can be replaced with `until` to not include the end value
+
+```scala
+/* This will iterate 5 times
+ * The output will be 1 2 3 4 5, each on its own line */	
+for (x <- 1 to 5) {
+	println(x)
+}
+
+/* This will iterate 4 times
+ * The output will be 1 2 3 4, each on its own line */	
+for (x <- 1 until 5) {
+	println(x)
 }
 ```
 
