@@ -4,7 +4,7 @@
 - _kabilan.manogaran@uoit.net_
 
 ## About the language
-> History
+#### History
 > * Scala is an acronym for Scalable Language 
 > * It was written by Martin Odersky
 > * The first version was released in 2003
@@ -12,7 +12,7 @@
 > 	* Features that were believe to be detrimental were not included
 >	* Included features that Java did not have, for example functional programming  
 
-> Interesting Features
+#### Interesting Features
 > * Scala is based on Java, it runs on JVM so it has access to Java libraries 
 > * It is a pure object oriented language that also supports functional programming
 > 	* Smoothly integrates features from both of these
@@ -186,6 +186,31 @@ def squareInt (a:Int) :Int = {
 }
 ```
 
+#### High Order Functions
+> Functions that take other functions as argument or returns them
+```scala
+def add5 (x:Int) :Int = x + 5
+def example (x:Int, func:Int=>AnyVal) :Unit = {
+  println(func(x))
+}
+
+example(4, add5)
+
+// Output
+// 9
+```
+
+#### Function Currying
+> Transforming a function that takes multiple arguments into a function that takes 1
+```scala
+def add (x:Int)(y:Int) :Int = { x + y }
+
+var step1 = add(5)_
+var step2 = step1(5)
+
+println(step2)
+```
+
 #### Classes
 > No restriction on the amount of instances that can be created
 ```scala
@@ -328,7 +353,6 @@ println(name)
 ```
 
 ## About open source library
-
 > * uPickle is a lightweight JSON and binary serialization library for Scala
 > * Simple to use
 > 	* JSON output is easy to read
@@ -336,12 +360,12 @@ println(name)
 > 	* Similar to ones in Ruby, Python and Javascript
 > * It is customizable
 > * Easy to add to a project due to having no dependencies
-
+>
 > * uPickle allows the user to read and write Scala data objects, such as sequences, to String 
 > 	* Can also read from CharSequences and Byte Arrays  
 > * uJson can easily manipulate JSON sources and data structures 
 > * Can standalone without uPickle
-
+>
 > uJson can easily create JSON blobs
 ```scala
 // A JSON blob
@@ -406,5 +430,5 @@ bob.greet()
 ----
 > * Functional programming features:
 > 	* Every function is a value
-> 	*  
+> 	* Supports higher order functions 
 >	*  
