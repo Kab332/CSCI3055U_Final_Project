@@ -158,11 +158,11 @@ for (x <- a_collection) {
 // 10
 ```
 
-> Filter out elements using conditions
+> Filter elements using conditions
 ```scala
 var a_collection = Array(1, 2, 3, 4, 5)
 
-// This will filter out odd numbers
+// This will filter even numbers
 for (x <- a_collection 
 	if (x % 2 == 0)) {
 	println(x)
@@ -187,6 +187,7 @@ def squareInt (a:Int) :Int = {
 ```
 
 #### Classes
+> No restriction on the amount of instances that can be created
 ```scala
 class Person(arg1:String, arg2:Int) {
   var name:String = arg1
@@ -209,16 +210,18 @@ Bob.greet()
 #### Singleton Objects
 > Can only have one instance
 ```scala
-object Object_Name {
-	// Some code here
+object Hello_World {
+  def main (args: Array[String]): Unit = {
+    println("Hello World!")
+  }
 }
 ```
 
 ## About the tools
-> * Scala can be interpreted using the IntelliJ IDE
+> * Scala can be compiled and interpreted using the IntelliJ IDE
 > * Some requirements must be fulfilled for Scala to work on it
-> 	* A Scala plugin must be obtained
->		* In IntelliJ, Settings -> Plugins -> Install JetBrains plugins -> Search and install Scala
+> 	* A Scala plug-in must be obtained
+>		* In IntelliJ, Settings -> Plugins -> Install JetBrains Plugins -> Search and install Scala
 >	* A Scala SDK is required
 >		* When creating a Scala project, IntelliJ will ask you to select a Scala SDK
 >		* Click create and download the latest version of Scala 
@@ -245,6 +248,15 @@ for (line <- reader.getLines()) {
   println(line)
 }
 reader.close()
+```
+
+#### User Input
+```scala
+import scala.io._
+
+print("Enter a line: ")
+val input = StdIn.readLine()
+println (input)
 ```
 
 #### Finding Max and Min value
@@ -345,11 +357,54 @@ val y = ujson.read(values)
 for (x <- 0 until values.value.size) {
   println(y(x)("Name"))
 }
+
+// Output
+// "Bob"
+// "Bill"
+// "Jim"
 ``` 
 
-# Analysis of the language
+## Analysis of the language
+#### 1) Programming Style
+> * Scala is a hybrid paradigm programming language
+> 	* It is both object oriented and functional 
+> * That being said, it is possible to do procedural programming using Scala, it is just not its focus
 
-> _Organize your report according to the project description
-document_.
+##### Procedural Programming Example
+```scala
+def greet (name:String, age:String, birth_date:String) {
+  println("My name is " + name + ", my birthday is "
+          + birth_date + ", and I am " + age + " years old.")
+}
 
+greet("Bob", "25", "January 1st, 2000")
+```
+----
+> * Object Oriented Features:
+> 	* Every value is an object, they all have a data type that they could fit into 
+> 	* Objects are described by classes
+>		* Classes describe object's attributes using variables
+>		* Classes describe object's functionality using methods
+>
+##### Object Oriented Programming Example
+> - The greet method has the same functionality as the one above, but here it has no arguments
+```scala
+class Person (arg1:String, arg2:String, arg3:String) {
+  var name = arg1
+  var age = arg2
+  var birth_date = arg3
 
+  def greet () {
+    println("My name is " + name + ", my birthday is "
+      + birth_date + ", and I am " + age + " years old.")
+  }
+}
+
+var bob = new Person("Bob", "25", "January 1st, 2000")
+bob.greet()
+```
+----
+> * Functional programming features:
+> 	* Every function is a value
+> 	*  
+>	*  
