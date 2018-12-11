@@ -72,6 +72,9 @@ if (x == 3) {
 } else {
 	println ("x is less than 3")	// If neither of the above conditions are true, then this println happens
 }
+
+// Output
+// x is less than 3
 ```
 
 #### while loop
@@ -155,7 +158,7 @@ var a_collection = Array(1, 2, 3, 4, 5)
 
 // This will filter out odd numbers
 for (x <- a_collection 
-		if (x % 2 == 0)) {
+	if (x % 2 == 0)) {
 	println(x)
 }
 
@@ -197,7 +200,8 @@ Bob.greet()
 // I am 20 years old.
 ```
 
-#### Objects
+#### SingletonObjects
+> Can only have one instance
 ```scala
 object Object_Name {
 	// Some code here
