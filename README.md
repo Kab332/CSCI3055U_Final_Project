@@ -13,18 +13,29 @@
 ## About the syntax
 
 #### Variables
-> * Variables in Scala can be declared using `var` 
-> * This type of variable is mutable, in other words it can be changed 
+##### - Mutable
+> * Mutable variables are variables that can be changed after declaration
+> * In Scala, they can be declared using `var` 
 > * To provide a data type, follow up the variable name with `:data_type` (ex. `:Int`)
 > * If no data type is given, `var` will automatically detect and set the data type based on the value given
 > 	* When changing the value of the variable, it must satisfy the data type
 ```scala
-var x:String = "Variable"	// Declaring variable, data type will be String
+var x:String = "Variable"	// Declaring mutable String variable
 x = "Another Variable"		// Changing value to another String
 x = 5				// Will not work, 5 is not a string
 
 var y = 5			// Data type will be detected automatically, here it is Int
 y = 5.5				// Will not work since 5.5 is not an Int
+```
+
+##### - Immutable
+> * Immutable variables cannot be changed after declaration
+> * In Scala, they can be declared using `val`
+> * Providing data type is the same as it is for `var`
+
+```scala
+val x:String = "Variable"	// Declaring immutable String variable
+x = "Another Variable"		// Will not work, value cannot be changed
 ```
 
 #### 
