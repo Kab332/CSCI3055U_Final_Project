@@ -12,15 +12,32 @@
 
 ## About the syntax
 
-> _give some code snippet of the language_
+#### Variables
+> * Variables in Scala can be declared using `var` 
+> * This type of variable is mutable, in other words it can be changed 
+> * To provide a data type, follow up the variable name with `:data_type` (ex. `:Int`)
+> * If no data type is given, `var` will automatically detect and set the data type based on the value given
+> 	* When changing the value of the variable, it must satisfy the data type
+```scala
+var x:String = "Variable"	// Declaring variable, data type will be String
+x = "Another Variable"		// Changing value to another String
+x = 5						// Will not work, 5 is not a string
 
-*Let form*
-
-```clojure
-(let [x 10
-      y 20]
-  (+ x y))
+var y = 5					// Data type will be detected automatically, here it is Int
+y = 5.5						// Will not work since 5.5 is not an Int
 ```
+
+#### 
+
+#### Objects
+> _Objects can be created using the object keyword._
+
+```scala
+object Object_Name {
+	// Some code here
+}
+```
+
 
 ## About the tools
 
