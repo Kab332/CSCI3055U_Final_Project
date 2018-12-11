@@ -12,7 +12,7 @@
 
 ## About the syntax
 
-### Data Types 
+#### Data Types 
 ----
 Data Type | Description | Default Value
 ---	| --- | --- | 
@@ -51,6 +51,16 @@ val x:String = "Variable"
 var (x, y:Int, z:String) = (10, 15, "Assignment")
 ```
 
+#### Arrays
+```scala
+var an_array = Array(1, 4, 7, 10)
+```
+
+#### Maps
+```scala
+var numbers = Map("One" -> 1, "Two" -> 2, "Three" -> 3)
+```
+
 #### Conditional Statements
 ```scala
 var x:Int = 2				// x is 2
@@ -68,53 +78,123 @@ if (x == 3) {
 ```scala
 var a:Int = 0
 
-/* This will print a until a's value is 5
- * The output will be 0 1 2 3 4, each on its own line	*/
+// This will print a until a's value is 5
 while (a < 5) {
 	println(a)
 	a = a + 1
 }
+
+// Output
+// 0
+// 1
+// 2
+// 3
+// 4
 ```
 
 #### do-while loop
 ```scala
 var a:Int = 5
 
-/* This will print a once because the condition is being checked at the end
- * The output will be 5. */
+// This will print a once because the condition is being checked at the end
 do {
 	println(a)
 } while (a < 5)
+
+// Output
+// 5
 ```
 
 #### for loop
 > Iterate through a range with to (includes last element)
 ```scala
-/* This will iterate 5 times
- * The output will be 1 2 3 4 5, each on its own line */	
 for (x <- 1 to 5) {
 	println(x)
 }
+
+// Output
+// 1
+// 2
+// 3
+// 4
+// 5
 ```
 
 > Iterate through a range with until (does not include last element)
 ```scala
-/* Range with until, this will iterate 4 times
- * The output will be 1 2 3 4, each on its own line */	
 for (x <- 1 until 5) {
 	println(x)
 }
+
+// Output
+// 1
+// 2
+// 3
+// 4
 ```
 
 > Iterate through a collection
 ```scala
-var a_collection = List(2, 4, 6, 8, 10)
+var a_collection = Array(2, 4, 6, 8, 10)
 
-/* This will iterate 5 times
- * The output will be 2 4 6 8 10, each on its own line */
 for (x <- a_collection) {
 	println(x)
 }
+
+// Output
+// 2
+// 4
+// 6
+// 8
+// 10
+```
+
+> Filter out elements using conditions
+```scala
+var a_collection = Array(1, 2, 3, 4, 5)
+
+// This will filter out odd numbers
+for (x <- a_collection 
+		if (x % 2 == 0)) {
+	println(x)
+}
+
+// Output
+// 2
+// 4
+```
+
+> Obtain the values that were iterated through 
+```scala
+var values = for { x <- 1 to 5 } yield x
+```
+
+#### Functions
+```scala
+// A function that takes an int, squares it and returns it as an int
+def squareInt (a:Int) :Int = {
+	return a * a
+}
+```
+
+#### Classes
+```scala
+class Person(arg1:String, arg2:Int) {
+  var name:String = arg1
+  var age:Int = arg2
+
+  def greet () {
+    println("Hello my name is " + name + ".")
+    println("I am " + age +  " years old.")
+  }
+}
+
+var Bob = new Person("Bob", 20)
+Bob.greet()
+
+// Output
+// Hello my name is Bob.
+// I am 20 years old.
 ```
 
 #### Objects
