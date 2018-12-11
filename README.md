@@ -84,11 +84,11 @@ var (x, y:Int, z:String) = (10, 15, "Assignment")
 var x:Int = 2
 
 if (x == 3) {
-	println ("x is 3")					// If x equals 3, this println happens
+	println ("x is 3")		// If x equals 3, this println happens
 } else if (x > 3) {
-	println ("x is greater than 3")		// If x > 3, this println happens
+	println ("x is greater than 3")	// If x > 3, this println happens
 } else {
-	println ("x is less than 3")		// If neither of the above conditions are true, then this println happens
+	println ("x is less than 3")	// If neither of the above conditions are true, then this println happens
 }
 ```
 
