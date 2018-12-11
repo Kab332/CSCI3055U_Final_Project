@@ -4,14 +4,17 @@
 - _kabilan.manogaran@uoit.net_
 
 ## About the language
-----
-> _Describe the language_
->
-> - History
-> - Some interesting features
+> * Scala is an acronym for Scalable Language 
+> * It was written by Martin Odersky
+> * The first version was released in 2003
+> * Scala is based on Java, it runs on JVM so it has access to Java libraries 
+> * It is a pure object oriented language that also supports functional programming
+> 	* It smoothly integrates features from both of these
+> * It was created on the goal of being a better programming language than Java
+> 	* Features that were believe to be detrimental were not included
+>	* Added features that Java did not have, for example functional programming  
 
 ## About the syntax
-----
 #### Data Types 
 ----
 Data Type | Description | Default Value
@@ -204,11 +207,9 @@ object Object_Name {
 ```
 
 ## About the tools
-----
-> _Describe the compiler or interpreter needed_.
+> 
 
 ## About the standard library
-----
 #### Writing to file
 > Scala doesn't have file writing methods, but it can use any Java objects including java.io
 ```scala
@@ -265,9 +266,8 @@ var numbers = Map("One" -> 1, "Two" -> 2, "Three" -> 3)
 ```
 
 ## About the specialized libraries 
-----
 #### Swing
-> An application that has a button 
+> Creating an application that has a button 
 ```scala
 import scala.swing._
 
