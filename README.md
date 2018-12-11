@@ -8,9 +8,9 @@
 > * Scala is an acronym for Scalable Language 
 > * It was written by Martin Odersky
 > * The first version was released in 2003
-> * It was created on the goal of being a better programming language than Java
+> * It was created with the goal of being a better programming language than Java
 > 	* Features that were believe to be detrimental were not included
->	* Added features that Java did not have, for example functional programming  
+>	* Included features that Java did not have, for example functional programming  
 
 > Interesting Features
 > * Scala is based on Java, it runs on JVM so it has access to Java libraries 
@@ -20,6 +20,8 @@
 >	* Does type checking at compile time instead of run time
 > 	* Does not need you to provide type information every time
 >	* Can auto detect type, so a data type does not even need to provided most of the time
+> * Every function is a value
+> * Scala provides lightweight syntax for defining anonymous functions
 
 ## About the syntax
 #### Data Types 
@@ -213,6 +215,15 @@ object Object_Name {
 ```
 
 ## About the tools
+> * Scala can be interpreted using the IntelliJ IDE
+> * Some requirements must be fulfilled for Scala to work on it
+> 	* A Scala plugin must be obtained
+>		* In IntelliJ, Settings -> Plugins -> Install JetBrains plugins -> Search and install Scala
+>	* A Scala SDK is required
+>		* When creating a Scala project, IntelliJ will ask you to select a Scala SDK
+>		* Click create and download the latest version of Scala 
+>		* Select the SDK that was just installed and finish creating the Scala project 
+> * Once fulfilling those requirements, Scala programming can now begin
 > 
 
 ## About the standard library
