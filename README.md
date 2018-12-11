@@ -81,7 +81,7 @@ var (x, y:Int, z:String) = (10, 15, "Assignment")
 > 	* `else { // more code }`
 
 ```scala
-var x:Int = 2		// x is 2
+var x:Int = 2				// x is 2
 
 if (x == 3) {
 	println ("x is 3")		// If x equals 3, this println happens
@@ -118,7 +118,7 @@ while (a < 5) {
 ```scala
 var a:Int = 5
 
-/* This will print a once even though its value is 5, since the condition is being checked at the end
+/* This will print a once because the condition is being checked at the end
  * The output will be 5. */
 do {
 	println(a)
@@ -130,9 +130,9 @@ do {
 > * If a range of integers is given, the loop will iterate through that range
 > * It while keeping track of its current position using a variable
 > 	* `for (currentPosition <- start to end) { // code that will be iterated  }`
-> 	* Values of currentPosition: start, start + 1, start + 2, ... , end - 1, end
-> * `to` is inclusive, it will include the end value 
-> * `to` can be replaced with `until` to not include the end value
+> 	* Values of `currentPosition`: `start`, `start` + 1, `start` + 2, ... , `end` - 1, `end`
+> * `to` is inclusive, it will include the `end` value 
+> * `to` can be replaced with `until` to not include the `end` value
 
 ```scala
 /* This will iterate 5 times
