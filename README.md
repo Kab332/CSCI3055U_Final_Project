@@ -1,4 +1,4 @@
-# _Your project title_
+# Scala Programming Language
 
 - _Kabilan Manogaran_
 - _kabilan.manogaran@uoit.net_
@@ -13,7 +13,7 @@
 ## About the syntax
 
 ### Data Types 
-
+----
 Data Type | Description | Default Value
 ---	| --- | --- | 
 Boolean | true or false | false
@@ -58,7 +58,18 @@ val x:String = "Variable"	// Declaring immutable String variable
 x = "Another Variable"		// Will not work, value cannot be changed
 ```
 
-#### 
+#### Multiple Assignments
+> * It is possible to assign many variables at the same time
+> * A tuple after `var` will hold the variable names (including data types)
+> 	* `var (x, y:Int, z:String)`
+> * The value assigned will be a tuple, each value in the same position as its target variable
+> 	* `(x_value, y_value, z_value)`
+
+```scala
+// x will be 10, y will be 15 and z will be "Assignment"
+var (x, y:Int, z:String) = (10, 15, "Assignment")
+```
+
 
 #### Objects
 > _Objects can be created using the object keyword._
