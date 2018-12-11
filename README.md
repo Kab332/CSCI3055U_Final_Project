@@ -223,8 +223,7 @@ object Object_Name {
 >		* When creating a Scala project, IntelliJ will ask you to select a Scala SDK
 >		* Click create and download the latest version of Scala 
 >		* Select the SDK that was just installed and finish creating the Scala project 
-> * Once fulfilling those requirements, Scala programming can now begin
-> 
+> * Once fulfilling those requirements, Scala programming on IntelliJ can begin
 
 ## About the standard library
 #### Writing to file
@@ -318,8 +317,35 @@ println(name)
 
 ## About open source library
 
-> _Describe at least one contribution by the open source
-community written in the language._
+> * uPickle is a lightweight JSON and binary serialization library for Scala
+> * Simple to use
+> 	* JSON output is easy to read
+> * The JSON processing api that uPickle uses (uJson) is easy to understand
+> 	* Similar to ones in Ruby, Python and Javascript
+> * It is customizable
+> * Easy to add to a project due to having no dependencies
+
+> * uPickle allows the user to read and write Scala data objects, such as sequences, to String 
+> 	* Can also read from CharSequences and Byte Arrays  
+> * uJson can easily manipulate JSON sources and data structures 
+> * Can standalone without uPickle
+
+> uJson can easily create JSON blobs
+```scala
+// A JSON blob
+val values = ujson.Arr(
+  ujson.Obj("ID" -> 1, "Name" -> "Bob"),
+  ujson.Obj("ID" -> 2, "Name" -> "Bill"), 
+  ujson.Obj("ID" -> 3, "Name" -> "Jim")
+)
+
+val y = ujson.read(values)
+
+// Printing every Name in the blob
+for (x <- 0 until values.value.size) {
+  println(y(x)("Name"))
+}
+``` 
 
 # Analysis of the language
 
