@@ -59,10 +59,10 @@ x = "Another Variable"		// Will not work, value cannot be changed
 ```
 
 #### Multiple Assignments
-> * It is possible to assign many variables at the same time
+> * It is possible to assign values to many variables at the same time
 > * A tuple after `var` will hold the variable names (including data types)
 > 	* `var (x, y:Int, z:String)`
-> * The value assigned will be a tuple, each value in the same position as its target variable
+> * The value assigned will be a tuple, each value is in the same position as its target variable
 > 	* `(x_value, y_value, z_value)`
 
 ```scala
@@ -70,6 +70,27 @@ x = "Another Variable"		// Will not work, value cannot be changed
 var (x, y:Int, z:String) = (10, 15, "Assignment")
 ```
 
+### Conditional Statements
+----
+> * Used to run certain blocks of code (`{ }`) if a `condition` has been fulfilled
+> 	* `if (condition) { // Code goes here }`
+> * One conditional statement can check multiple conditions using `else if` (following an `if`)
+> * There can be multiple `else if` blocks in a conditional statement, but only 1 `if` and `else`
+> 	* `else if (another_condition) { // more code }`
+> * `else` can be used to handle cases where none of the conditions in the statement has been fulfilled
+> 	* `else { // more code }`
+
+```scala
+var x:Int = 2
+
+if (x == 3) {
+	println ("x is 3")					// If x equals 3, this println happens
+} else if (x > 3) {
+	println ("x is greater than 3")		// If x > 3, this println happens
+} else {
+	println ("x is less than 3")		// If neither of the above conditions are true, then this println happens
+}
+```
 
 #### Objects
 > _Objects can be created using the object keyword._
