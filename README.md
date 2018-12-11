@@ -31,55 +31,27 @@ Nothing | Subtype of every other type, has no instances | -
 Any | Supertype of every type, all objects are of type Any | -
 AnyRef | Supertype of every reference type data | -
 
-### Variables
-----
-#### Mutable
-> * Mutable variables are variables that can be changed after declaration
-> * In Scala, they can be declared using `var` 
-> * To provide a data type, follow up the variable name with `:data_type` (ex. `:Int`)
-> * If no data type is given, `var` will automatically detect and set the data type based on the value given
-> 	* When changing the value of the variable, it must satisfy the data type
+#### Mutable Variable
 ```scala
-var x:String = "Variable"	// Declaring mutable String variable
-x = "Another Variable"		// Changing value to another String
-x = 5				// Will not work, 5 is not a string
+// Auto detects data type
+var x = 5
 
-var y = 5			// Data type will be detected automatically, here it is Int
-y = 5.5				// Will not work since 5.5 is not an Int
+// Data type provided
+var y:Double = 5.5
 ```
 
-#### Immutable
-> * Immutable variables cannot be changed after declaration
-> * In Scala, they can be declared using `val`
-> * Providing data type is the same as it is for `var`
-
+#### Immutable Variable
 ```scala
-val x:String = "Variable"	// Declaring immutable String variable
-x = "Another Variable"		// Will not work, value cannot be changed
+val x:String = "Variable"	
 ```
 
 #### Multiple Assignments
-> * It is possible to assign values to many variables at the same time
-> * A tuple after `var` will hold the variable names (including data types)
-> 	* `var (x, y:Int, z:String)`
-> * The value assigned will be a tuple, each value is in the same position as its target variable
-> 	* `(x_value, y_value, z_value)`
-
 ```scala
 // x will be 10, y will be 15 and z will be "Assignment"
 var (x, y:Int, z:String) = (10, 15, "Assignment")
 ```
 
-### Conditional Statements
-----
-> * Used to run certain blocks of code (`{ }`) if a `condition` has been fulfilled
-> 	* `if (condition) { // Code goes here }`
-> * One conditional statement can check multiple conditions using `else if` (following an `if`)
-> * There can be multiple `else if` blocks in a conditional statement, but only 1 `if` and `else`
-> 	* `else if (another_condition) { // more code }`
-> * `else` can be used to handle cases where none of the conditions in the statement has been fulfilled
-> 	* `else { // more code }`
-
+#### Conditional Statements
 ```scala
 var x:Int = 2				// x is 2
 
@@ -92,14 +64,7 @@ if (x == 3) {
 }
 ```
 
-### Loop Statements
-----
-#### while
-> * A block of code is iterated over and over again while a `condition` remains true
-> 	* `while (condition) { // code in here }` 
-> * The `condition` is checked before the code block is executed
-> * This is a useful loop for when you do not know how many iterations are needed
-
+#### while loop
 ```scala
 var a:Int = 0
 
@@ -111,11 +76,7 @@ while (a < 5) {
 }
 ```
 
-#### do-while
-> * Similar to the `while` loop, but `condition` is checked at the end of the loop
-> 	* `do { // code block } while (condition)`
-> * This means that the code block will be executed at least once
-
+#### do-while loop
 ```scala
 var a:Int = 5
 
@@ -126,32 +87,37 @@ do {
 } while (a < 5)
 ```
 
-#### for 
-> * A loop that iterates a specific amount of times
-> * If a range of integers is given, the loop will iterate through that range
-> * It will keep track of its current position using a variable
-> 	* `for (currentPosition <- start to end) { // code that will be iterated  }`
-> 	* Values of `currentPosition`: `start`, `start` + 1, `start` + 2, ... , `end` - 1, `end`
-> * `to` is inclusive, it will include the `end` value 
-> * `to` can be replaced with `until` to not include the `end` value
-
+#### for loop
+> Iterate through a range with to (includes last element)
 ```scala
 /* This will iterate 5 times
  * The output will be 1 2 3 4 5, each on its own line */	
 for (x <- 1 to 5) {
 	println(x)
 }
+```
 
-/* This will iterate 4 times
+> Iterate through a range with until (does not include last element)
+```scala
+/* Range with until, this will iterate 4 times
  * The output will be 1 2 3 4, each on its own line */	
 for (x <- 1 until 5) {
 	println(x)
 }
 ```
 
-#### Objects
-> _Objects can be created using the object keyword._
+> Iterate through a collection
+```scala
+var a_collection = List(2, 4, 6, 8, 10)
 
+/* This will iterate 5 times
+ * The output will be 2 4 6 8 10, each on its own line */
+for (x <- a_collection) {
+	println(x)
+}
+```
+
+#### Objects
 ```scala
 object Object_Name {
 	// Some code here
