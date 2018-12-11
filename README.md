@@ -97,7 +97,7 @@ if (x == 3) {
 #### while
 > * A block of code is iterated over and over again while a `condition` remains true
 > 	* `while (condition) { // code in here }` 
-> * The condition is checked before the code block is executed
+> * The `condition` is checked before the code block is executed
 > * This is a useful loop for when you do not know how many iterations are needed
 
 ```scala
@@ -112,7 +112,7 @@ while (a < 5) {
 ```
 
 #### do-while
-> * Similar to the `while` loop, but condition is checked at the end of the loop
+> * Similar to the `while` loop, but `condition` is checked at the end of the loop
 > 	* `do { // code block } while (condition)`
 > * This means that the code block will be executed at least once
 
@@ -129,7 +129,7 @@ do {
 #### for 
 > * A loop that iterates a specific amount of times
 > * If a range of integers is given, the loop will iterate through that range
-> * It while keeping track of its current position using a variable
+> * It will keep track of its current position using a variable
 > 	* `for (currentPosition <- start to end) { // code that will be iterated  }`
 > 	* Values of `currentPosition`: `start`, `start` + 1, `start` + 2, ... , `end` - 1, `end`
 > * `to` is inclusive, it will include the `end` value 
