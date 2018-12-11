@@ -4,19 +4,25 @@
 - _kabilan.manogaran@uoit.net_
 
 ## About the language
+> History
 > * Scala is an acronym for Scalable Language 
 > * It was written by Martin Odersky
 > * The first version was released in 2003
-> * Scala is based on Java, it runs on JVM so it has access to Java libraries 
-> * It is a pure object oriented language that also supports functional programming
-> 	* It smoothly integrates features from both of these
 > * It was created on the goal of being a better programming language than Java
 > 	* Features that were believe to be detrimental were not included
 >	* Added features that Java did not have, for example functional programming  
 
+> Interesting Features
+> * Scala is based on Java, it runs on JVM so it has access to Java libraries 
+> * It is a pure object oriented language that also supports functional programming
+> 	* Smoothly integrates features from both of these
+> * Scala is statically typed
+>	* Does type checking at compile time instead of run time
+> 	* Does not need you to provide type information every time
+>	* Can auto detect type, so a data type does not even need to provided most of the time
+
 ## About the syntax
 #### Data Types 
-----
 Data Type | Description | Default Value
 ---	| --- | --- | 
 Boolean | true or false | false
