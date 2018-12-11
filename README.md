@@ -113,6 +113,7 @@ while (a < 5) {
 
 #### do-while
 > * Similar to the `while` loop, but condition is checked at the end of the loop
+> 	* `do { // code block } while (condition)`
 > * This means that the code block will be executed at least once
 
 ```scala
