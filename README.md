@@ -56,11 +56,6 @@ var (x, y:Int, z:String) = (10, 15, "Assignment")
 var an_array = Array(1, 4, 7, 10)
 ```
 
-#### Maps
-```scala
-var numbers = Map("One" -> 1, "Two" -> 2, "Three" -> 3)
-```
-
 #### Conditional Statements
 ```scala
 var x:Int = 2				// x is 2
@@ -200,7 +195,7 @@ Bob.greet()
 // I am 20 years old.
 ```
 
-#### SingletonObjects
+#### Singleton Objects
 > Can only have one instance
 ```scala
 object Object_Name {
@@ -215,8 +210,60 @@ object Object_Name {
 
 ## About the standard library
 
-> _Give some examples of the functions and data structures
-> offered by the standard library_.
+#### Writing to file
+> Scala doesn't have file writing methods, but it can use any Java objects including java.io
+```scala
+import java.io._
+
+val writer = new PrintWriter(new File("example.txt"))
+writer.write("Testing if this works")
+writer.close()
+```
+
+#### Reading from a file
+```scala
+import scala.io.Source
+
+val reader = Source.fromFile("example.txt")
+for (line <- reader.getLines()) {
+  println(line)
+}
+reader.close()
+```
+
+#### Finding Max and Min value
+```scala
+import scala.math._
+
+val x = 5
+val y = 10
+
+println(max(x, y))
+
+// Output
+// 10
+
+println(min(x, y))
+
+// Output
+// 5
+```
+
+#### Finding Random Double value that is >= 0 and < 1.0
+```scala
+import scala.math._
+
+val x = random()
+
+println(x)
+```
+
+#### Maps
+```scala
+import scala.collection._
+
+var numbers = Map("One" -> 1, "Two" -> 2, "Three" -> 3)
+```
 
 ## About open source library
 
