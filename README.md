@@ -12,6 +12,25 @@
 
 ## About the syntax
 
+### Data Types 
+
+Data Type | Description | Default Value
+---	| --- | --- | 
+Boolean | true or false | false
+Byte | 8 bit signed value ranging from -2<sup>7</sup> to 2<sup>7</sup> - 1 | 0
+Short | 16 bit signed value ranging from -2<sup>15</sup> to 2<sup>15</sup> - 1 | 0
+Int | 32 bit signed value ranging from -2<sup>31</sup> to 2<sup>31</sup> - 1 | 0
+Long | 64 bit signed value ranging from -2<sup>63</sup> to 2<sup>63</sup> - 1 | 0L
+Float | 32 bit IEEE 754 single-precision float, positive or negative | 0.0F
+Double | 64 bit IEEE 754 double-precision float, positive or negative | 0.0D
+Char | 16 bit unsigned Unicode character ranging from 0 to 2<sup>16</sup> - 1 | '\u0000'
+String | A sequence of characters | Null
+Unit | Has only one value, (). It is void in Java | ()
+Null | A null or empty reference. Subtype of reference type data, cannot be given as a value for value types like String or Int. | -
+Nothing | Subtype of every other type, has no instances | -
+Any | Supertype of every type, all objects are of type Any | -
+AnyRef | Supertype of every reference type data | -
+
 ### Variables
 ----
 #### Mutable
