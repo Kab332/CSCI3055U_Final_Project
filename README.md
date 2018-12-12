@@ -9,11 +9,11 @@
 > * It was written by Martin Odersky
 > * The first version was released in 2003
 > * It was created with the goal of being a better programming language than Java
-> 	* Features that were believe to be detrimental were not included
->	* Included features that Java did not have, for example functional programming  
+> 	* Features that were believed to be detrimental were not included
+>	* Included features that Java did not have, for example functional programming features 
 
 #### Interesting Features
-> * Scala is based on Java, it runs on JVM so it has access to Java libraries 
+> * Scala is based on Java, it runs on Java Virtual Machine (JVM) so it has access to Java libraries 
 > * It is a pure object oriented language that also supports functional programming
 > 	* Smoothly integrates features from both of these
 > * Scala is statically typed
@@ -50,6 +50,7 @@ var y:Double = 5.5
 
 #### Immutable Variable
 ```scala
+// Cannot change its value
 val x:String = "Variable"	
 ```
 
@@ -112,7 +113,7 @@ do {
 ```
 
 #### for loop
-> Iterate through a range with to (includes last element)
+> Iterate through a range that has `to` (includes last element)
 ```scala
 for (x <- 1 to 5) {
 	println(x)
@@ -126,7 +127,7 @@ for (x <- 1 to 5) {
 // 5
 ```
 
-> Iterate through a range with until (does not include last element)
+> Iterate through a range that has `until` (does not include last element)
 ```scala
 for (x <- 1 until 5) {
 	println(x)
@@ -177,7 +178,7 @@ var values = for { x <- 1 to 5 } yield x
 
 #### Functions
 ```scala
-// A function that takes an int, squares it and returns it as an int
+// A function that takes an Int, squares it and returns it as an Int
 def squareInt (a:Int) :Int = {
 	return a * a
 }
@@ -215,14 +216,14 @@ object Hello_World {
 ```
 
 ## About the tools
-> * Scala is  based on Java and uses JVM 
+> * Scala is  based on Java and runs on JVM 
 > * Scala can be compiled and interpreted in two ways
->	* Using an IntelliJ, or another IDE
+>	* Using IntelliJ, or another IDE
 >	* Using the command line
 > * For command line, Scala's build tool (sbt) needs to be obtained and installed
 > * For using Intellij, some requirements must be fulfilled for Scala to work
 > 	* A Scala plug-in must be obtained
->		* In IntelliJ, Settings -> Plugins -> Install JetBrains Plugins -> Search and install Scala
+>		* In IntelliJ, File -> Settings -> Plugins -> Install JetBrains Plugins -> Search and install Scala
 >	* A Scala SDK is required
 >		* When creating a Scala project, IntelliJ will ask you to select a Scala SDK
 >		* Click create and download the latest version of Scala 
@@ -230,7 +231,7 @@ object Hello_World {
 > * Once these requirements are fulfilled, you can begin programming Scala on IntelliJ
 
 ## About the standard library
-#### Writing to file
+#### Writing to a file
 > Scala doesn't have file writing methods, but it can use any Java objects including java.io
 ```scala
 import java.io._
@@ -336,12 +337,17 @@ println(name)
 > 	* Similar to ones in Ruby, Python and Javascript
 > * It is customizable
 > * Easy to add to a project due to having no dependencies
->
 > * uPickle allows the user to read and write Scala data objects, such as sequences, to String 
 > 	* Can also read from CharSequences and Byte Arrays  
 > * uJson can easily manipulate JSON sources and data structures 
 > * Can standalone without uPickle
->
+> * Dependency if using sbt:
+> 	* libraryDependencies += "com.lihaoyi" %% "upickle" % "0.7.1"
+>	* libraryDependencies += "com.lihaoyi" %% "ujson" % "0.7.1"
+> * Dependency if using IntelliJ:
+>	* File -> Project Structure -> Global Libraries -> + -> From Maven
+>		* Search and get com.lihaoyi:upickle_2.11:0.2.8
+>		* Search and get com.lihaoyi:ujson_2.12:0.7.12
 > uJson can easily create JSON blobs
 ```scala
 // A JSON blob
@@ -368,8 +374,8 @@ for (x <- 0 until values.value.size) {
 ### 1) Programming Style
 > * Scala is a hybrid paradigm programming language
 > 	* It is both object oriented and functional 
->	* It is based on Java, so object oriented is more focused amongst the two 
-> * That being said, it is possible to do procedural programming using Scala, it is just not its focus
+>	* Object Oriented programming is the bigger focus since Scala is based on Java  
+> * That being said, it is possible to do procedural programming using Scala as well, it is just not its focus
 
 ##### Procedural Programming Example (for comparison)
 ```scala
@@ -381,14 +387,14 @@ def greet (name:String, age:String, birth_date:String) {
 greet("Bob", "25", "January 1st, 2000")
 ```
 ----
-> * Object Oriented Features:
+> * Object Oriented Features that Scala has:
 > 	* Every value is an object, they all have a data type that they could fit into 
 > 	* Objects are described by classes
 >		* Classes describe object's attributes using variables
 >		* Classes describe object's functionality using methods
 >
 ##### Object Oriented Programming Example (for comparison)
-> - The greet method has the same functionality as the one above, but here it has no arguments
+> - The greet method has the same functionality as the one above, but here it has no arguments (it is less dependent on other factors)
 ```scala
 class Person (arg1:String, arg2:String, arg3:String) {
   var name = arg1
@@ -405,14 +411,14 @@ var bob = new Person("Bob", "25", "January 1st, 2000")
 bob.greet()
 ```
 ----
-> * Functional programming features:
+> * Functional programming features that Scala has:
 > 	* Every function is a value
 > 	* Supports higher order functions 
 >	* Supports function currying 
 
 ### 2) Meta-programming macro
 > * Scala has the ability to perform meta-programming
-> * Assists in various activities, such as code generation and refactoring
+> * This assists in various activities, such as code generation and refactoring
 > * Meta-programming is possible in Scala through the Scala.reflect library 
 > 	* Provided in the standard distribution
 > 	* Uses macros to generate structured code
@@ -424,7 +430,13 @@ bob.greet()
 >	* An open source library 
 >	* Everything represented by Trees
 > 	* Keeps all information about the program
-
+> * Scala meta allows you to do many things
+>	* Parse Trees, can produce syntax trees from Scala source code
+>		* or Construct Trees, depending on the situation we might not be able to parse and might just need to construct dynamically
+> 	* Pattern Match Trees, can target interesting tree nodes and deconstruct them
+>	* Compare trees for equality, using reference equality
+>	* Traverse Trees, can go to every tree node and collect values
+>	* Transform Trees, can visit every tree node and transform interesting ones 
 
 
 ### 3) Symbol resolution and Closure
