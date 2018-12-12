@@ -282,7 +282,7 @@ println(min(x, y))
 ```scala
 import scala.math._
 
-val x = random()
+val x = random
 
 println(x)
 ```
@@ -425,6 +425,8 @@ bob.greet()
 >	* Everything represented by Trees
 > 	* Keeps all information about the program
 
+
+
 ### 3) Symbol resolution and Closure
 > * Scala has many reserved symbols, but there are times when certain symbols cannot be found
 > * This could be caused by composition of different methods, or if the method has been imported to the scope 
@@ -506,7 +508,7 @@ println(step2)
 > * Scala is statically typed
 >	* Does type checking at compile time instead of run time
 >	* The compiler can tell if the program is correct without running the program
->	* Entering types all the time will be redundent, this is where type inference comes in 
+>	* Entering types all the time will be redundant, this is where type inference comes in 
 > * Scala supports type inference 
 > 	* Does not need you to provide type information every time
 >	* It can auto detect type, so a data type does not even need to provided most of the time
@@ -514,8 +516,8 @@ println(step2)
 
 ```scala
 var x = "A String"		// x will be given type String
-var y = 5				// y will be given type Int
-var z = 5.0				// z will be given type Double
+var y = 5			// y will be given type Int
+var z = 5.0			// z will be given type Double
 ```
 
 ### 7) Strengths and Weaknesses
