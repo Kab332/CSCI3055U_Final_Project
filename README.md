@@ -466,6 +466,7 @@ someFunction()
 ### 4) Scoping Rules
 > * Scala supports lexical (static) scoping over dynamic scoping
 > * Outer code blocks will be visible inside a block
+> * Functions choose values based on their original scope, not the scope of what they were called in
 >
 ##### Scoping Example
 ```scala
@@ -547,11 +548,11 @@ var a_map2 = Map("A" -> 1, "B" -> 2, "C" -> "Three")
 >	* Has Scalability
 > 	* Can be easy to learn
 > 	* Has objected oriented and functional features
+> 	* Has XML support
 > 	* IntelliJ can be used for it
 >		* Great UI
 >		* Many plugins 
 >		* Built in dependency search
-> 	* Has XML support
 > * Disadvantages
 > 	* Type information could become complicated due to Scala being a hybrid paradigm language
 >	* Not as much support in comparison to popular languages like Java, Python and C++
