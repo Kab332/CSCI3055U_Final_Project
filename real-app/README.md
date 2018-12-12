@@ -5,4 +5,4 @@
 >	* Navigate to TicTacToe.scala (only file in src)
 >	* Run the main function
 > 	* The game will appear on the terminal asking for the first player's move
-> * Another way to run the code is to take the Standard_Library.scala file and run it on Scala's command line
+> * Another way to run the code is to take the TicTacToe.scala file and run it on Scala's command line
