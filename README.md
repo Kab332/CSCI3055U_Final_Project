@@ -227,7 +227,7 @@ object Hello_World {
 >		* When creating a Scala project, IntelliJ will ask you to select a Scala SDK
 >		* Click create and download the latest version of Scala 
 >		* Select the SDK that was just installed and finish creating the Scala project 
-> * Once fulfilling those requirements, Scala programming on IntelliJ can begin
+> * Once these requirements are fulfilled, you can begin programming Scala on IntelliJ
 
 ## About the standard library
 #### Writing to file
@@ -489,7 +489,7 @@ println(step2)
 > * Scala is statically typed
 >	* Does type checking at compile time instead of run time
 >	* The compiler can tell if the program is correct without running the program
->	* Do not need to provide types for everything because of type inference 
+>	* Entering types all the time will be redundent, this is where type inference comes in 
 > * Scala supports type inference 
 > 	* Does not need you to provide type information every time
 >	* It can auto detect type, so a data type does not even need to provided most of the time
@@ -501,3 +501,14 @@ var y = 5				// y will be given type Int
 var z = 5.0				// z will be given type Double
 ```
 
+#### 7) Strengths and Weaknesses
+> * Advantages
+>	* Has Scalability
+> 	* Can be easy to learn
+> 	* Has objected oriented and functional features
+> 	* IntelliJ can be used for it, great UI, many plugins, and built in dependency search
+> 	* Has XML support
+> * Disadvantages
+> 	* Type information could become complicated due to Scala being a hybrid paradigm language
+>	* Not as much support when compared to popular languages like Java, Python and C++
+>	* Has backward compatibility issues
