@@ -365,7 +365,7 @@ for (x <- 0 until values.value.size) {
 ``` 
 
 ## Analysis of the language
-#### 1) Programming Style
+### 1) Programming Style
 > * Scala is a hybrid paradigm programming language
 > 	* It is both object oriented and functional 
 >	* It is based on Java, so object oriented is more focused amongst the two 
@@ -410,7 +410,7 @@ bob.greet()
 > 	* Supports higher order functions 
 >	* Supports function currying 
 
-#### 2) Meta-programming macro
+### 2) Meta-programming macro
 > * Scala has the ability to perform meta-programming
 > * Assists in various activities, such as code generation and refactoring
 > * Meta-programming is possible in Scala through the Scala.reflect library 
@@ -425,10 +425,10 @@ bob.greet()
 >	* Everything represented by Trees
 > 	* Keeps all information about the program
 
-#### 3) Symbol resolution
+### 3) Symbol resolution
 
 
-#### 4) Scoping Rules
+### 4) Scoping Rules
 > * Scala supports lexical (static) scoping over dynamic scoping
 > * Outer code blocks will be visible inside a block
 >
@@ -454,7 +454,7 @@ secondFunc()
 > * firstFunc is returning the value of the global x, which is what it has access to if called by itself
 > * This is lexical scoping, if the firstFunc took the value of the x in secondFunc instead then that would have been dynamic scoping
 
-#### 5) Functional programming constructs
+### 5) Functional programming constructs
 > * Two functional programming constructs are higher order functions and function currying
 
 #### High Order Functions
@@ -485,7 +485,7 @@ println(step2)
 // 10
 ```
 
-#### 6) Type System
+### 6) Type System
 > * Scala is statically typed
 >	* Does type checking at compile time instead of run time
 >	* The compiler can tell if the program is correct without running the program
@@ -501,7 +501,7 @@ var y = 5				// y will be given type Int
 var z = 5.0				// z will be given type Double
 ```
 
-#### 7) Strengths and Weaknesses
+### 7) Strengths and Weaknesses
 > * Advantages
 >	* Has Scalability
 > 	* Can be easy to learn
