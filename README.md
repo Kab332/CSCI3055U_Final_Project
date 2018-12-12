@@ -1,4 +1,5 @@
 # Scala
+#### Version used: 2.12.8
 
 - _Kabilan Manogaran_
 - _kabilan.manogaran@uoit.net_
