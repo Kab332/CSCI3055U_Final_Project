@@ -1,4 +1,4 @@
-# Scala Programming Language
+# Scala
 
 - _Kabilan Manogaran_
 - _kabilan.manogaran@uoit.net_
