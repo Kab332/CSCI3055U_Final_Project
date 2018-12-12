@@ -428,6 +428,8 @@ bob.greet()
 > 	* They are byte code after being compiled
 > * Scala meta can be used instead
 >	* An open source library 
+>		* Dependency for sbt: libraryDependencies += "org.scalameta" %% "scalameta" % "4.1.0"
+>		* Dependency for IntelliJ: 
 >	* Everything represented by Trees
 > 	* Keeps all information about the program
 > * Scala meta allows you to do many things
@@ -441,8 +443,10 @@ bob.greet()
 
 ### 3) Symbol resolution and Closure
 > * Scala has many reserved symbols, but there are times when certain symbols cannot be found
-> * This could be caused by composition of different methods, or if the method has been imported to the scope 
-> * It is also possible that imported implicit conversion 
+> * Documentation of the classes and methods can be checked to find them
+> * There are also cases where symbols have appeared but are not in the documentation
+> * This could be caused by composition of different methods, or if the method had been imported to the scope 
+> * It is also possible that it is available through imported implicit conversion 
 >	* Implicit conversion can occur if an expression's type (ex. A) does not match with its expected type (ex. B)
 > * The api.JavaUniverse package within scala.reflect can assist in resolving symbols
 > 	* It adds operations that link symbols and types to underlying classes and runtime values of a JVM instance
