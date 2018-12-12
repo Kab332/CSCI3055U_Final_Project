@@ -215,8 +215,12 @@ object Hello_World {
 ```
 
 ## About the tools
-> * Scala can be compiled and interpreted using the IntelliJ IDE
-> * Some requirements must be fulfilled for Scala to work on it
+> * Scala is  based on Java and uses JVM 
+> * Scala can be compiled and interpreted in two ways
+>	* Using an IntelliJ, or another IDE
+>	* Using the command line
+> * For command line, Scala's build tool (sbt) needs to be obtained and installed
+> * For using Intellij, some requirements must be fulfilled for Scala to work
 > 	* A Scala plug-in must be obtained
 >		* In IntelliJ, Settings -> Plugins -> Install JetBrains Plugins -> Search and install Scala
 >	* A Scala SDK is required
