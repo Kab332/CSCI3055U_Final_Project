@@ -425,8 +425,25 @@ bob.greet()
 >	* Everything represented by Trees
 > 	* Keeps all information about the program
 
-### 3) Symbol resolution
+### 3) Symbol resolution and Closure
+> * Scala has many reserved symbols, but there are times when certain symbols cannot be found
+> * This could be caused by composition of different methods, or if the method has been imported to the scope 
+> * It is also possible that imported implicit conversion 
+>	* Implicit conversion can occur if an expression's type (ex. A) does not match with its expected type (ex. B)
+> * The api.JavaUniverse package within scala.reflect can assist in resolving symbols
+> 	* It adds operations that link symbols and types to underlying classes and runtime values of a JVM instance
+> * In Scala, closures are functions that depends on values outside the function to determine its return value
+```scala
+def someFunction (): Unit = {
+  println ( "addNumber(5) = " + addNumbers(5))
+  println ( "addNumber(6) = " + addNumbers(6))
+}
 
+var number = 10
+var addNumbers = (i:Int)  =>  i + 5
+
+someFunction()
+```
 
 ### 4) Scoping Rules
 > * Scala supports lexical (static) scoping over dynamic scoping
