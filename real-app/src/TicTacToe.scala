@@ -2,6 +2,7 @@ import scala.collection._
 import scala.io._
 
 object TicTacToe {
+  // Checking the "board" for all possible win conditions
   def winCheck (board : mutable.Map[Int,String]): Boolean = {
     // Checking all rows
     for (i:Int <- Array(1, 4, 7)) {
@@ -27,6 +28,7 @@ object TicTacToe {
     false
   }
 
+  // Printing the board (3 by 3)
   def printBoard (board : mutable.Map[Int, String]) : Unit = {
     for (i:Int <- Array(1, 4, 7)) {
       println(board(i) + "\t" + board(i+1) + "\t" + board(i+2))
@@ -35,6 +37,7 @@ object TicTacToe {
   }
 
   def main (args : Array[String]): Unit = {
+    // Initializing the map, making since the values are changeable
     val board = mutable.Map(1 -> "1", 2 -> "2", 3 -> "3", 4 -> "4", 5 -> "5", 6 -> "6", 7 -> "7", 8 -> "8", 9 -> "9")
     var input:Int = 0
 
@@ -43,20 +46,24 @@ object TicTacToe {
 
     printBoard(board)
 
-    while (true) {
+    // while loop will continue until someone wins
+    while (true && currentVal < 10) {
       if (currentVal % 2 == 0) {
         currentPlayer = "O"
       } else {
         currentPlayer = "X"
       }
 
-      print("Player(" + currentPlayer + "), please pick an unoccupied position: ")
+      // Asking the player to choose the spot they want to place their respective mark in
+      print("Player(" + currentPlayer + "), please pick an unoccupied position to place your " + currentPlayer + ": ")
       input = StdIn.readInt()
 
+      // If the input entered by the user is a valid value
       if (1 <= input && input <= 9) {
         if (board(input) != "O" && board(input) != "X") {
           board(input) = currentPlayer
           currentVal += 1
+
         } else {
           println("Position is occupied.")
         }
@@ -68,11 +75,16 @@ object TicTacToe {
 
       printBoard(board)
 
+      // If there are no more unoccupied spaces on the board
+      if (currentVal == 10) {
+        System.out.println ("It is a draw.")
+      }
+
+      // Check if the current player has won (only the current player can win at this point since they made the last move)
       if (winCheck(board)) {
         println("Player(" + currentPlayer + ") has won!")
         return
       }
-
     }
   }
 }
