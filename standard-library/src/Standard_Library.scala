@@ -45,7 +45,7 @@ object Standard_Library {
     println(min(x, y))
 
     println ("\nFinding random Double number between 0 and 1 (not including 1)")
-    val a = random()
+    val a = random
     println(a)
 
     println ("\nDeclaring a map")
