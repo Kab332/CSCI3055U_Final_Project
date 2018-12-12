@@ -534,6 +534,12 @@ println(step2)
 var x = "A String"		// x will be given type String
 var y = 5			// y will be given type Int
 var z = 5.0			// z will be given type Double
+
+// a_map1 will be given the type Map[String, Int]
+var a_map1 = Map("A" -> 1, "B" -> 2, "C" -> 3)
+
+// a_map2 will be given the type Map[String, Any]
+var a_map2 = Map("A" -> 1, "B" -> 2, "C" -> "Three")
 ```
 
 ### 7) Strengths and Weaknesses
@@ -541,9 +547,12 @@ var z = 5.0			// z will be given type Double
 >	* Has Scalability
 > 	* Can be easy to learn
 > 	* Has objected oriented and functional features
-> 	* IntelliJ can be used for it, great UI, many plugins, and built in dependency search
+> 	* IntelliJ can be used for it
+>		* Great UI
+>		* Many plugins 
+>		* Built in dependency search
 > 	* Has XML support
 > * Disadvantages
 > 	* Type information could become complicated due to Scala being a hybrid paradigm language
->	* Not as much support when compared to popular languages like Java, Python and C++
+>	* Not as much support in comparison to popular languages like Java, Python and C++
 >	* Has backward compatibility issues
