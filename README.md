@@ -17,9 +17,6 @@
 > * It is a pure object oriented language that also supports functional programming
 > 	* Smoothly integrates features from both of these
 > * Scala is statically typed
->	* Does type checking at compile time instead of run time
-> 	* Does not need you to provide type information every time
->	* Can auto detect type, so a data type does not even need to provided most of the time
 > * Every function is a value
 > * Scala provides lightweight syntax for defining anonymous functions
 
@@ -184,34 +181,6 @@ var values = for { x <- 1 to 5 } yield x
 def squareInt (a:Int) :Int = {
 	return a * a
 }
-```
-
-#### High Order Functions
-> Functions that take other functions as argument or returns them
-```scala
-def add5 (x:Int) :Int = x + 5
-def example (x:Int, func:Int=>AnyVal) :Unit = {
-  println(func(x))
-}
-
-example(4, add5)
-
-// Output
-// 9
-```
-
-#### Function Currying
-> Transforming a function that takes multiple arguments into a function that takes 1
-```scala
-def add (x:Int)(y:Int) :Int = { x + y }
-
-var step1 = add(5)_
-var step2 = step1(5)
-
-println(step2)
-
-// Output
-// 10
 ```
 
 #### Classes
@@ -395,6 +364,7 @@ for (x <- 0 until values.value.size) {
 #### 1) Programming Style
 > * Scala is a hybrid paradigm programming language
 > 	* It is both object oriented and functional 
+>	* It is based on Java, so object oriented is more focused amongst the two 
 > * That being said, it is possible to do procedural programming using Scala, it is just not its focus
 
 ##### Procedural Programming Example (for comparison)
@@ -452,3 +422,78 @@ bob.greet()
 > 	* Keeps all information about the program
 
 #### 3) Symbol resolution
+
+
+#### 4) Scoping Rules
+> * Scala supports lexical (static) scoping over dynamic scoping
+> * Outer code blocks will be visible inside a block
+>
+##### Scoping Example
+```scala
+var x:Int = 5
+
+def firstFunc () = {
+  x
+}
+
+def secondFunc() = {
+  var x:Int = 10
+  firstFunc()
+}
+
+secondFunc()
+
+// Output
+// 5
+```
+> * The value of the x in firstFunc is not dependent on secondFunc
+> * firstFunc is returning the value of the global x, which is what it has access to if called by itself
+> * This is lexical scoping, if the firstFunc took the value of the x in secondFunc instead then that would have been dynamic scoping
+
+#### 5) Functional programming constructs
+> * Two functional programming constructs are higher order functions and function currying
+
+#### High Order Functions
+> Functions that take other functions as argument or returns them
+```scala
+def add5 (x:Int) :Int = x + 5
+def example (x:Int, func:Int=>AnyVal) :Unit = {
+  println(func(x))
+}
+
+example(4, add5)
+
+// Output
+// 9
+```
+
+#### Function Currying
+> Transforming a function that takes multiple arguments into a function that takes 1
+```scala
+def add (x:Int)(y:Int) :Int = { x + y }
+
+var step1 = add(5)_
+var step2 = step1(5)
+
+println(step2)
+
+// Output
+// 10
+```
+
+#### 6) Type System
+> * Scala is statically typed
+>	* Does type checking at compile time instead of run time
+>	* The compiler can tell if the program is correct without running the program
+>	* Do not need to provide types for everything because of type inference 
+> * Scala supports type inference 
+> 	* Does not need you to provide type information every time
+>	* It can auto detect type, so a data type does not even need to provided most of the time
+> 	* It is even capable of inferring maps
+
+```scala
+var x = "A String"		// x will be given type String
+var y = 5				// y will be given type Int
+var z = 5.0				// z will be given type Double
+```
+
