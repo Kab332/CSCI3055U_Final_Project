@@ -86,10 +86,28 @@ object Basic_Syntax {
 
     println("\nCalling Hello_World's main function")
     Hello_World.main(Array())
+
+    println("\nHigh Order Functions: Functions that take other functions as arguments or returns them")
+    example(4, add5)
+
+    println("\nFunction Currying: Transforming a function that takes multiple arguments int a function that takes 1")
+    var step1 = add(5)_
+    var step2 = step1(5)
+    println(step2)
   }
 
   // A function that takes an int, squares it and returns it as an int
   def squareInt (a:Int) :Int = {
     return a * a
   }
+
+  // For High Order Function Example
+  def add5 (x:Int) :Int = x + 5
+  def example (x:Int, func:Int=>AnyVal) :Unit = {
+    println(func(x))
+  }
+
+  // For Function Currying Example
+  def add (x:Int)(y:Int) :Int = { x + y }
+
 }
